@@ -1,12 +1,22 @@
-import React from "react";
-import { BrowserRouter, Routes } from "react-router-dom";
-import LoginRouter from "./login-routing/login-routing";
+import React from 'react';
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  Routes,
+} from 'react-router-dom';
+import AppRoutes from './app.route';
+import LoginRouter from './login-routing/login-routing';
+
+const routes = createBrowserRouter(AppRoutes);
 
 function Routing() {
   return (
     <BrowserRouter>
       <Routes>
-        <LoginRouter />
+        <Route>
+          <LoginRouter />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

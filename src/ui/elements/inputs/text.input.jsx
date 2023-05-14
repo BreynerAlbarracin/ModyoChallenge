@@ -8,7 +8,6 @@ function Textinput() {
       <Form.Control
         placeholder="Insert your username to start"
         aria-label="Username"
-        aria-describedby="basic-addon1"
       />
     </InputGroup>
   );

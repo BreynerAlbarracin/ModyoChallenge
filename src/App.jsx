@@ -1,5 +1,5 @@
-import React from "react";
-import Routing from "./ui/routing/routing";
+import React from 'react';
+import Routing from './ui/routing/routing';
 
 function App() {
   return <Routing />;
