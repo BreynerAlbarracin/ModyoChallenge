@@ -4,12 +4,13 @@ const axiosInstance = axios.create({
   baseURL: "",
 });
 
-axiosInstance.interceptors.request((config) => {
-    return config;
-});
+axiosInstance.interceptors.request((config) => config);
 
 axiosInstance.interceptors.response((response) => {
-    return response;
+  if (response.status !== 200) {
+  }
+
+  return response;
 });
 
 export default axiosInstance;
