@@ -1,7 +1,7 @@
 const BoardGameActions = {
-  registerSuccess: "REGISTER_SUCCESS",
-  registerFail: "REGISTER_FAIL",
-  loadImagesToPlay: "LOAD_IMAGES_PLAY",
+  registerSuccess: 'REGISTER_SUCCESS',
+  registerFail: 'REGISTER_FAIL',
+  loadImagesToPlay: 'LOAD_IMAGES_PLAY',
 };
 
 export function registerSuccess() {

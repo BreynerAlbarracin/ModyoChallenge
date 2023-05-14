@@ -1,6 +1,6 @@
 const UsersActions = {
-  addUser: "ADD_USER",
-  searchUser: "SEARCH_USER",
+  addUser: 'ADD_USER',
+  searchUser: 'SEARCH_USER',
 };
 
 export function addUser(user) {

@@ -1,5 +1,5 @@
-import UsersState from "../state/users.state";
-import { addUser } from "../actions/users.actions";
+import UsersState from '../state/users.state';
+import { addUser } from '../actions/users.actions';
 
 function UsersReducer(state = UsersState, action = {}) {
   switch (action.type) {

@@ -2,8 +2,8 @@ import {
   registerSuccess,
   registerFail,
   loadImagesToPlay,
-} from "../actions/board-game.actions";
-import BoardGameState from "../state/board-game.state";
+} from '../actions/board-game.actions';
+import BoardGameState from '../state/board-game.state';
 
 function BoardGameReducer(state = BoardGameState, action = {}) {
   switch (action.type) {

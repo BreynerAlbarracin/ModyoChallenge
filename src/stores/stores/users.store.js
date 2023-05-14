@@ -1,5 +1,5 @@
-import { configureStore } from "redux";
-import UsersReducer from "../reducers/users.reducer";
+import { configureStore } from 'redux';
+import UsersReducer from '../reducers/users.reducer';
 
 const UsersStore = configureStore(UsersReducer);
 
