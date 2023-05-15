@@ -19,60 +19,7 @@ function ContainerCardsComponent() {
   const countPairs = useRef(0);
   const delayStart = useRef(4000);
 
-  useEffect(() => {
-    loadImagesGame();
-
-    return BoardGameStore.subscribe(() => {
-      if (!imagesInfo.length) {
-        const state = BoardGameStore.getState();
-        countPairs.current = state.images.length / 2;
-
-        setImagesInfo([...state.images]);
-
-        cardsSuccess.current = [...state.images.map((img) => img.id.split('|').at(0))];
-
-        setTimeout(() => {
-          cardsSuccess.current = [];
-          setDisabled(false);
-        }, delayStart.current);
-      }
-    });
-  }, [imagesInfo]);
-
-  useEffect(() => BoardGameStore.subscribe(() => {
-    const { success, fails } = BoardGameStore.getState();
-
-    setSuccessCount(success);
-    setFailsCount(fails);
-  }));
-
-  useEffect(() => {
-    if (
-      !!cardsSuccess.current.length
-      && !!countPairs.current
-      && cardsSuccess.current.length === countPairs.current) {
-      finishGame();
-
-      Swal.fire({
-        title: 'Juego Completado!',
-        text: `Haz completado el tablero (Aciertos:${successCount} - Fallos:${failsCount})`,
-        icon: 'success',
-        showCancelButton: true,
-        confirmButtonText: 'Volver a jugar!',
-        cancelButtonText: 'Cerrar',
-      }).then((confirm) => {
-        if (confirm.isConfirmed) {
-          resetGame();
-          cardsSuccess.current = [];
-
-          setSuccessCount(0);
-          setFailsCount(0);
-          setFirstImageShow('');
-          setSecondImageShow('');
-        }
-      });
-    }
-  }, [successCount, failsCount]);
+  const randomSortImages = (images) => images.sort(() => Math.random() - 0.5);
 
   const showImage = (idImage) => {
     let [firstImage] = firstImageShow.split('|');
@@ -129,6 +76,69 @@ function ContainerCardsComponent() {
       setImageShow={showImage}
     />
   );
+
+  useEffect(() => {
+    loadImagesGame();
+
+    return BoardGameStore.subscribe(() => {
+      if (!imagesInfo.length) {
+        const state = BoardGameStore.getState();
+        countPairs.current = state.images.length / 2;
+
+        setImagesInfo([...randomSortImages(state.images)]);
+
+        cardsSuccess.current = [...state.images.map((img) => img.id.split('|').at(0))];
+
+        setTimeout(() => {
+          cardsSuccess.current = [];
+          setDisabled(false);
+        }, delayStart.current);
+      }
+    });
+  }, [imagesInfo]);
+
+  useEffect(() => BoardGameStore.subscribe(() => {
+    const { success, fails } = BoardGameStore.getState();
+
+    setSuccessCount(success);
+    setFailsCount(fails);
+  }));
+
+  useEffect(() => {
+    if (
+      !!cardsSuccess.current.length
+      && !!countPairs.current
+      && cardsSuccess.current.length === countPairs.current) {
+      finishGame();
+
+      Swal.fire({
+        title: 'Juego Completado!',
+        text: `Haz completado el tablero (Aciertos:${successCount} - Fallos:${failsCount})`,
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonText: 'Volver a jugar!',
+        cancelButtonText: 'Cerrar',
+      }).then((confirm) => {
+        if (confirm.isConfirmed) {
+          resetGame();
+
+          setSuccessCount(0);
+          setFailsCount(0);
+          setFirstImageShow('');
+          setSecondImageShow('');
+          setDisabled(true);
+          setImagesInfo([...randomSortImages(imagesInfo)]);
+
+          cardsSuccess.current = [...imagesInfo.map((img) => img.id.split('|').at(0))];
+
+          setTimeout(() => {
+            cardsSuccess.current = [];
+            setDisabled(false);
+          }, delayStart.current);
+        }
+      });
+    }
+  }, [successCount, failsCount, imagesInfo]);
 
   return (
     <div className="d-flex flex-wrap">
