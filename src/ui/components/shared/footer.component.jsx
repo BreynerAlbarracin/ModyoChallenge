@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react';
 
 function FooterComponent() {
-  return <div />;
+  return (
+    <footer>
+      <div>Desarrollador por Breyner Albarracin como reto para Modyo</div>
+    </footer>
+  );
 }
 
 export default FooterComponent;

@@ -1,7 +1,8 @@
-const BoardGameActions = {
+export const BoardGameActions = {
   registerSuccess: 'REGISTER_SUCCESS',
   registerFail: 'REGISTER_FAIL',
   loadImagesToPlay: 'LOAD_IMAGES_PLAY',
+  resetBoard: 'RESET_BOARD',
 };
 
 export function registerSuccess() {
@@ -15,6 +16,10 @@ export function registerFail() {
 export function loadImagesToPlay(imagesToPlay) {
   return {
     type: BoardGameActions.loadImagesToPlay,
-    imagestoPlay: imagesToPlay,
+    imagesToPlay,
   };
+}
+
+export function resetBoard() {
+  return { type: BoardGameActions.resetBoard };
 }

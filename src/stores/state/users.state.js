@@ -1,4 +1,5 @@
 const UsersState = {
+  userId: '',
   users: [],
 };
 

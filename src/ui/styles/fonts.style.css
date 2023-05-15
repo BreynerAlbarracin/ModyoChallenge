@@ -1,0 +1,7 @@
+.sucess-font{
+    color: var(--bs-green);
+}
+
+.fail-font{
+    color: var(--bs-red);
+}

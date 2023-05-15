@@ -1,0 +1,28 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'colors.style.css';
+
+body{
+    color: var(--bs-gray);
+    background-color: var(--bs-gray-200);
+}
+
+header{
+    height: 5vh;
+}
+
+.body-app{
+    height: 92vh;
+}
+
+footer{
+    height: 3vh;
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}

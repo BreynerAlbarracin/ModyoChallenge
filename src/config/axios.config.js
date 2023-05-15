@@ -4,10 +4,11 @@ const axiosInstance = axios.create({
   baseURL: '',
 });
 
-axiosInstance.interceptors.request((config) => config);
+axiosInstance.interceptors.request.use((config) => config);
 
-axiosInstance.interceptors.response((response) => {
+axiosInstance.interceptors.response.use((response) => {
   if (response.status !== 200) {
+    console.log('');
   }
 
   return response;

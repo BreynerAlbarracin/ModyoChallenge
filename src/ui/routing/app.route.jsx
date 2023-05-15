@@ -1,13 +1,9 @@
-import React from 'react';
-import LoginPage from '../pages/login.page';
+import LoginRouter from './login-routing/login-routing';
 import BoardGameRoute from './board-game-routing/board-game-route';
 
 const AppRoutes = [
-  {
-    path: '/',
-    element: <LoginPage />,
-    children: [BoardGameRoute],
-  },
+  ...LoginRouter,
+  ...BoardGameRoute,
 ];
 
 export default AppRoutes;
