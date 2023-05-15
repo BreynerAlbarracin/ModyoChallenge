@@ -2,7 +2,7 @@ import '../../styles/sizing.style.css';
 import '../../styles/images.style.css';
 import '../../styles/components.style.css';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import UrlLibrary from '../../../libraries/urls.library';
 
@@ -17,20 +17,12 @@ function CardImageElement({
 
   return (
     <div className="card card-image overflow-hidden m-2">
-      {imageShow
-        ? (
-          <button disabled={disabled} type="button" className="card-button w-100 h-100">
-            <img className="w-100 h-70 object-cover" alt={cardName} src={urlImage} />
-            <div className="d-flex h-30 justify-content-center align-items-center p-2">
-              {cardName}
-            </div>
-          </button>
-        )
-        : (
-          <button disabled={disabled} type="button" className="card-button h-100" onClick={setShowCard}>
-            <img className="h-100 w-100 object-cover" alt="back card" src={backCard} />
-          </button>
-        )}
+      <button disabled={disabled} type="button" className="card-button h-100 transition-1" onClick={imageShow ? null : setShowCard}>
+        <img className={`w-100 ${imageShow ? 'h-70' : 'h-100'} object-cover transition-1`} alt={cardName} src={imageShow ? urlImage : backCard} />
+        <div className={`d-flex ${imageShow ? 'h-30' : 'h-0'} justify-content-center align-items-center p-2 transition-1`}>
+          {cardName}
+        </div>
+      </button>
     </div>
   );
 }

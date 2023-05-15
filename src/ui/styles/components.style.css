@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.transition-1{
+    transition: 1s;
+}
+
 .button-float{
     position: fixed;
     background-color: var(--bs-white);
