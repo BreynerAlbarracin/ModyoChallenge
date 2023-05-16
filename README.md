@@ -1,7 +1,6 @@
+# Modyo Challenge
 
-Incluir instrucciones para probar el proyecto en local en un fichero de nombre README.md ubicado en la raíz del proyecto o en su defecto desplegarlo en algún ambiente explicando en el readme que método se utilizó para el despliegue.
-
-#
+La aplicación almacenada en este repositorio es un juego de Memoria, el cual consiste en visualizar tarjetas que contienen imagenes de animales por 4 segundos, luego se ocultan las imagenes y se debe, por medio de clicks, buscar las parejas con menor numero de errores posibles.
 
 ## Script configurados en el aplicativo
 
