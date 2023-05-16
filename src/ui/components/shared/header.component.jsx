@@ -53,13 +53,13 @@ function HeaderComponent() {
 
   return (
     <header>
-      <div className="row mx-4 p-3 border-bottom">
-        <div className="d-flex col-xl-6 align-items-center">
+      <div className="row mx-4 border-bottom">
+        <div className="d-flex col-xl-4 align-items-center">
           <h5>
             Memory Game - by Breyner Albarracin
           </h5>
         </div>
-        <div className="col-xl-6">
+        <div className="col-xl-8">
           <div className="row">
             <div className="d-flex col-xl-3 align-items-center">
               Usuario:
@@ -67,7 +67,7 @@ function HeaderComponent() {
               {userName}
             </div>
             <div className="d-flex col-xl-3 align-items-center">
-              <p>
+              <p className="m-0">
                 Mejor Score:
                 <br />
                 Aciertos:

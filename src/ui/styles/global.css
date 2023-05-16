@@ -7,15 +7,29 @@ body{
 }
 
 header{
-    height: 5vh;
+    height: 10%;
 }
 
 .body-app{
-    height: 92vh;
+    height: 85%;
 }
 
 footer{
-    height: 3vh;
+    height: 5%;
+}
+
+@media (max-width: 1200px) {
+    header{
+        height: 25%;
+    }
+    
+    .body-app{
+        height: 67%;
+    }
+    
+    footer{
+        height: 8%;
+    }
 }
 
 h1{

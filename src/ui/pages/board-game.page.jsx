@@ -3,7 +3,7 @@ import ContainerCardsComponent from '../components/cards/container-cards.compone
 
 function BoardGamePage() {
   return (
-    <div className="h-100 p-5 overflow-auto">
+    <div className="h-100 p-4 overflow-auto">
       <ContainerCardsComponent />
     </div>
   );

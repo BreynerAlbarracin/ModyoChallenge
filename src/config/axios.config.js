@@ -6,12 +6,6 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use((config) => config);
 
-axiosInstance.interceptors.response.use((response) => {
-  if (response.status !== 200) {
-    console.log('');
-  }
-
-  return response;
-});
+axiosInstance.interceptors.response.use((response) => response);
 
 export default axiosInstance;
